@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   fetching: false,
 };
 
-const liveShowsReducer = (state = INITIAL_STATE, action) => {
+const showsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.FETCH_SHOWS_REQUEST:
       return {
@@ -31,4 +31,4 @@ const liveShowsReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default liveShowsReducer;
+export default showsReducer;

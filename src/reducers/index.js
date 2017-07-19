@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import liveShowsReducer from './live_shows';
+import showsReducer from './shows';
 
 const rootReducer = combineReducers({
-  liveShows: liveShowsReducer,
+  shows: showsReducer,
 });
 
 export default rootReducer;
