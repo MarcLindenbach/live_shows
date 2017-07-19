@@ -5,11 +5,10 @@ import { fetchShows } from '../actions';
 
 class ShowsList extends Component {
   componentWillMount() {
-    this.props.fetchShows(this.props.nextPage);
+    this.props.fetchShows();
   }
 
   renderShows() {
-    console.log(this.props.shows)
     return this.props.shows.map(show => <li>{ show }</li>);
   }
 
@@ -24,12 +23,11 @@ class ShowsList extends Component {
 
 ShowsList.propTypes = {
   fetchShows: PropTypes.func.isRequired,
-  nextPage: PropTypes.number.isRequired,
+  shows: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = ({ shows }) => ({
   shows: shows.shows,
-  nextPage: shows.nextPage,
 });
 
 const mapDispatchToProps = {
