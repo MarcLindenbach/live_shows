@@ -1,7 +1,11 @@
 import React from 'react';
 
+import { ShowsList } from '../containers';
+
 const App = () => (
-  <h1>Live Shows</h1>
+  <div className="app">
+    <ShowsList />
+  </div>
 );
 
 export default App;
