@@ -8,9 +8,16 @@ class ShowsList extends Component {
     this.props.fetchShows(this.props.nextPage);
   }
 
+  renderShows() {
+    console.log(this.props.shows)
+    return this.props.shows.map(show => <li>{ show }</li>);
+  }
+
   render() {
     return (
-      <h1>Shows</h1>
+      <ul>
+        {this.renderShows()}
+      </ul>
     );
   }
 }

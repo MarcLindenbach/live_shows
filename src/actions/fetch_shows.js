@@ -14,7 +14,7 @@ export const fetchShowsFailed = error => ({
 
 export const fetchShowsSuccess = shows => ({
   type: types.FETCH_SHOWS_SUCCESS,
-  paylod: {
+  payload: {
     shows,
   },
 });
@@ -22,7 +22,7 @@ export const fetchShowsSuccess = shows => ({
 export const fetchShows = pageNumber =>
   (dispatch) => {
     dispatch(fetchShowsRequest());
-    return axios.get(`http://fake-shows-endpoint.com/show/?page=${pageNumber}`)
+    return axios.get(`http://fakeshowsapi.com/shows`)
       .then(({ data }) => dispatch(fetchShowsSuccess(data)))
       .catch(({ response, message }) => {
         const err = response ? response.data : message;

@@ -23,15 +23,18 @@ module.exports = {
       { test: /\.css$/, use:
         ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader']
-        })
-      }
-    ]
+          use: ['css-loader'],
+        }),
+      },
+    ],
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
     }),
-  ]
+  ],
+  node: {
+    fs: 'empty',
+  },
 };
