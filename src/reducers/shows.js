@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   nextPage: 1,
   fetching: false,
   fetched: false,
+  error: null,
 };
 
 const showsReducer = (state = INITIAL_STATE, action) => {
@@ -27,6 +28,7 @@ const showsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         fetching: false,
+        error: `Error fetching shows: ${action.payload.error}`,
       };
 
     default:
