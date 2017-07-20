@@ -5,7 +5,13 @@ const showsPerRequest = 6;
 
 const getMockShow = id => ({
   id,
-  date: '2016-10-03',
+  name: 'Wild West ready to rock live',
+  date: 'July 31, 2017',
+  time: '9PM',
+  venue: 'Muzooka Club',
+  location: 'Calgary, AB',
+  role: 'Headliner',
+  admission: '$14',
   image: `http://lorempixel.com/400/200/people/${id}`,
 });
 
