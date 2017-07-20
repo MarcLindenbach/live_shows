@@ -30,5 +30,5 @@
 
 .show-detail__body__entry span {
     display: inline-block;
-    width: 50%;
+    min-width: 30%;
 }
