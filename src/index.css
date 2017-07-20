@@ -4,6 +4,13 @@ body {
 
 .container {
     background-color: #fcfcfc;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    min-height: 80vh;
+}
+
+.header {
+    margin-bottom: 1rem;
 }
 
 .show-list--enter {
