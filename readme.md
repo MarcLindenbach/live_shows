@@ -1,7 +1,7 @@
 Live Shows
 ==========
 
-##Demo
+## Demo
 Check out the demo over at https://marclindenbach.github.io/live_shows/
 
 ## Running
