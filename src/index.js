@@ -8,6 +8,7 @@ import thunkMiddleware from 'redux-thunk';
 import './server';
 import './index.css';
 import App from './components/app';
+import { ShowsView } from './components';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(
@@ -15,9 +16,16 @@ const createStoreWithMiddleware = applyMiddleware(
 )(createStore);
 const store = createStoreWithMiddleware(reducers);
 
+/*
+ * The provider wraps the entire app so the state will be available across all components
+ * Usually the Shows View component would not be hardcoded, and instead React-Router would render
+ * the App component with the correct child component based on the active route
+ */
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App>
+      <ShowsView />
+    </App>
   </Provider>
   , document.getElementById('root'),
 );

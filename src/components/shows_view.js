@@ -3,10 +3,10 @@ import { ShowList, LoadMore } from '../containers';
 import Header from './header';
 
 /*
- * Shows Component
+ * ShowsView Component
  * All parts of the Live Shows Component
  */
-const Shows = () => (
+const ShowsView = () => (
   <div className="app container">
     <Header title="Live Shows">
       <button className="btn btn-primary">Add Show</button>
@@ -17,4 +17,4 @@ const Shows = () => (
   </div>
 );
 
-export default Shows;
+export default ShowsView;

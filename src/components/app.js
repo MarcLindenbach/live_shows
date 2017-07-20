@@ -1,17 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Navbar from './nav_bar';
-import Shows from './shows';
 
-/* Live Show App Component
- * Displays the navbar and shows components
- * In a larger app instead of hard-coding the shows component I would probably use react-router to
- * display the correct component based on the route
+/* App Component
+ * Displays the navbar component and active 'view' component
  */
-const App = () => (
+const App = ({ children }) => (
   <div>
     <Navbar />
-    <Shows />
+    {children}
   </div>
 );
+
+App.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.object),
+};
+
+App.defaultProps = {
+  children: [],
+};
 
 export default App;
