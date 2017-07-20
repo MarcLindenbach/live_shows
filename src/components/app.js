@@ -4,8 +4,8 @@ import Shows from './shows';
 
 /* Live Show App Component
  * Displays the navbar and shows components
- * In a larger instead of the shows component I would probably use react-router to display
- * the correct component based on the route
+ * In a larger app instead of hard-coding the shows component I would probably use react-router to
+ * display the correct component based on the route
  */
 const App = () => (
   <div>
