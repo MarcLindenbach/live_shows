@@ -7,8 +7,8 @@ import thunkMiddleware from 'redux-thunk';
 
 import './server';
 import './index.css';
-import App from './components/app';
-import { ShowsView } from './components';
+import { App } from './components';
+import { ShowView } from './containers';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(
@@ -24,7 +24,7 @@ const store = createStoreWithMiddleware(reducers);
 ReactDOM.render(
   <Provider store={store}>
     <App>
-      <ShowsView />
+      <ShowView />
     </App>
   </Provider>
   , document.getElementById('root'),

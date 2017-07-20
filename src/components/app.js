@@ -13,11 +13,11 @@ const App = ({ children }) => (
 );
 
 App.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.object),
+  children: PropTypes.element,
 };
 
 App.defaultProps = {
-  children: [],
+  children: null,
 };
 
 export default App;
