@@ -20,7 +20,7 @@ const Header = ({ title, children }) => (
 
 Header.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.arrayOf(PropTypes.object),
+  children: PropTypes.arrayOf(PropTypes.element),
 };
 
 Header.defaultProps = {
