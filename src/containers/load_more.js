@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchShows } from '../actions';
 
-const LoadMoreButton = props => (
+const LoadMore = props => (
   <button
     onClick={() => props.fetchShows(props.nextPage)}
     disabled={props.fetching}
@@ -12,7 +12,7 @@ const LoadMoreButton = props => (
   </button>
 );
 
-LoadMoreButton.propTypes = {
+LoadMore.propTypes = {
   fetchShows: PropTypes.func.isRequired,
   nextPage: PropTypes.number.isRequired,
   fetching: PropTypes.bool.isRequired,
@@ -27,4 +27,4 @@ const mapDispatchToProps = {
   fetchShows,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoadMoreButton);
+export default connect(mapStateToProps, mapDispatchToProps)(LoadMore);
