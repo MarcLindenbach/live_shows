@@ -11,9 +11,9 @@ class ShowsList extends Component {
 
   render() {
     return (
-      <ul>
+      <div className="shows-list row">
         {this.props.shows.map(show => <ShowDetail key={show.id} {...show} />)}
-      </ul>
+      </div>
     );
   }
 }
