@@ -1,7 +1,7 @@
 import moxios from 'moxios';
 import _ from 'lodash';
 
-const showsPerRequest = 6;
+const showsPerRequest = 3;
 
 const getMockShow = id => ({
   id,
