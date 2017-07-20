@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ShowsList } from '../containers';
+import { ShowList } from '../containers';
 
 const App = () => (
   <div className="app container">
-    <ShowsList />
+    <ShowList />
   </div>
 );
 

@@ -1,3 +1,9 @@
-body {
-    background-color: red;
+.show-detail {
+    margin-bottom: 2rem;
 }
+
+.show-detail__image {
+    height: 200px;
+    width: auto;
+}
+

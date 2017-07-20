@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ShowDetail = ({ date, image }) => (
-  <div className="show-detail col-md-6 col-lg-4">
-    <div className="card">
-      <img className="card-img-top" src={image} />
+  <div className="col-md-6 col-lg-4">
+    <div className="show-detail card">
+      <img
+        className="show-detail__image card-img-top"
+        src={image}
+      />
       <div className="card-block">
         { date }
       </div>

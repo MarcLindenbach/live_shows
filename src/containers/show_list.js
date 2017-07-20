@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchShows } from '../actions';
 import { ShowDetail } from '../components';
 
-class ShowsList extends Component {
+class ShowList extends Component {
   componentWillMount() {
     this.props.fetchShows();
   }
@@ -18,7 +18,7 @@ class ShowsList extends Component {
   }
 }
 
-ShowsList.propTypes = {
+ShowList.propTypes = {
   fetchShows: PropTypes.func.isRequired,
   shows: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
@@ -31,4 +31,4 @@ const mapDispatchToProps = {
   fetchShows,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowsList);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowList);
