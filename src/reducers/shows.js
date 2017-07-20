@@ -2,6 +2,7 @@ import * as types from '../actions/types';
 
 const INITIAL_STATE = {
   shows: [],
+  nextPage: 1,
   fetching: false,
   fetched: false,
   error: null,
@@ -20,6 +21,7 @@ const showsReducer = (state = INITIAL_STATE, action) => {
         ...state,
         fetching: false,
         shows: [...state.shows, ...action.payload.shows],
+        nextPage: state.nextPage + 1,
       };
 
     case types.FETCH_SHOWS_FAILED:

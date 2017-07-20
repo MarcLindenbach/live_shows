@@ -4,17 +4,22 @@ import { connect } from 'react-redux';
 import { fetchShows } from '../actions';
 
 const LoadMoreButton = props => (
-  <button onClick={() => props.fetchShows()}>
+  <button onClick={() => props.fetchShows(props.nextPage)}>
     Load More
   </button>
 );
 
 LoadMoreButton.propTypes = {
   fetchShows: PropTypes.func.isRequired,
+  nextPage: PropTypes.number.isRequired,
 };
+
+const mapStateToProps = ({ shows }) => ({
+  nextPage: shows.nextPage,
+});
 
 const mapDispatchToProps = {
   fetchShows,
 };
 
-export default connect(null, mapDispatchToProps)(LoadMoreButton);
+export default connect(mapStateToProps, mapDispatchToProps)(LoadMoreButton);

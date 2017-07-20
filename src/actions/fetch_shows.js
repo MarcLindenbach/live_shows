@@ -22,7 +22,7 @@ export const fetchShowsSuccess = shows => ({
 export const fetchShows = pageNumber =>
   (dispatch) => {
     dispatch(fetchShowsRequest());
-    return axios.get(`http://fakeshowsapi.com/shows`)
+    return axios.get(`http://fakeshowsapi.com/shows?page=${pageNumber}`)
       .then(({ data }) => dispatch(fetchShowsSuccess(data)))
       .catch(({ response, message }) => {
         const err = response ? response.data : message;

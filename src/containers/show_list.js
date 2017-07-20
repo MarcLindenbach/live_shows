@@ -6,7 +6,7 @@ import { ShowDetail } from '../components';
 
 class ShowList extends Component {
   componentWillMount() {
-    this.props.fetchShows();
+    this.props.fetchShows(this.props.nextPage);
   }
 
   render() {
@@ -21,10 +21,12 @@ class ShowList extends Component {
 ShowList.propTypes = {
   fetchShows: PropTypes.func.isRequired,
   shows: PropTypes.arrayOf(PropTypes.object).isRequired,
+  nextPage: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = ({ shows }) => ({
   shows: shows.shows,
+  nextPage: shows.nextPage,
 });
 
 const mapDispatchToProps = {
