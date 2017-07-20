@@ -19,7 +19,7 @@ const showsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         fetching: false,
-        shows: action.payload.shows,
+        shows: [...state.shows, ...action.payload.shows],
       };
 
     case types.FETCH_SHOWS_FAILED:

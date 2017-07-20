@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { ShowList } from '../containers';
+import { ShowList, LoadMoreButton } from '../containers';
 
 const App = () => (
   <div className="app container">
     <ShowList />
+    <LoadMoreButton />
   </div>
 );
 
