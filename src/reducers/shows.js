@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   shows: [],
   nextPage: 1,
   fetching: false,
-  fetched: false,
+  allShowsFetched: false,
   error: null,
 };
 
@@ -22,6 +22,7 @@ const showsReducer = (state = INITIAL_STATE, action) => {
         fetching: false,
         shows: [...state.shows, ...action.payload.shows],
         nextPage: state.nextPage + 1,
+        allShowsFetched: action.payload.shows.length === 0,
       };
 
     case types.FETCH_SHOWS_FAILED:

@@ -22,8 +22,12 @@ const getMockShows = page => _.times(SHOWS_PER_REQUEST, t => getMockShow(t, page
 
 /* Stub a url for each page with a delayed response to simulate latency */
 const mock = new MockAdapter(axios, { delayResponse: 1500 });
+
 _.times(PAGES, (page) => {
   mock.onGet(`http://fakeshowsapi.com/shows?page=${page + 1}`)
     .reply(200, getMockShows(page));
 });
 
+/* Stub a url for the last page which will return an empty array of shows (i.e. no shows left) */
+mock.onGet(`http://fakeshowsapi.com/shows?page=${PAGES + 1}`)
+  .reply(200, []);
