@@ -7,7 +7,7 @@ import LoadMore from './load_more';
 import { fetchShows } from '../actions';
 
 /*
- * ShowsView Component
+ * ShowView Container View
  * All parts of the Live Shows Component
  * On mounting will load the first page of shows
  */
