@@ -5,7 +5,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const VENDOR_LIBS = [
   'react',
-  'react-dom'
+  'react-dom',
+  'axios',
+  'axios-mock-adapter',
+  'lodash',
+  'prop-types',
+  'react-addons-css-transition-group',
+  'react-redux',
+  'redux',
+  'redux-thunk',
 ];
 
 module.exports = {
