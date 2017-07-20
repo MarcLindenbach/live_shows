@@ -11,12 +11,16 @@ const getLoadMoreContent = (fetching, allShowsFetched) => {
 };
 
 const LoadMore = props => (
-  <button
-    onClick={() => props.fetchShows(props.nextPage)}
-    disabled={props.fetching || props.allShowsFetched}
-  >
-    {getLoadMoreContent(props.fetching, props.allShowsFetched)}
-  </button>
+  <div className="row justify-content-center">
+    <button
+      type="button"
+      className="btn btn-secondary"
+      onClick={() => props.fetchShows(props.nextPage)}
+      disabled={props.fetching || props.allShowsFetched}
+    >
+      {getLoadMoreContent(props.fetching, props.allShowsFetched)}
+    </button>
+  </div>
 );
 
 LoadMore.propTypes = {
