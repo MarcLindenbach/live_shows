@@ -3,13 +3,18 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchShows } from '../actions';
 
-
 const getLoadMoreContent = (fetching, allShowsFetched) => {
   if (fetching) { return 'Loading Shows...'; }
   if (allShowsFetched) { return 'No More Shows'; }
   return 'Load More';
 };
 
+/*
+ * Load More Button Container
+ * When clicked will load the next page of shows
+ * Is disabled and shows loading while fetching shows
+ * Is disabled and shows corresponding text when no shows available to fetch
+ */
 const LoadMore = props => (
   <div className="row justify-content-center">
     <button
