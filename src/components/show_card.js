@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ShowDetail from './show_detail';
 
+/*
+ * Show Card Component
+ * Displays the details of a show
+ */
 const ShowCard = props => (
   <div className="col-md-6 col-lg-4">
     <div className="show-card card">

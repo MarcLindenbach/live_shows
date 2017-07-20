@@ -8,6 +8,10 @@ const INITIAL_STATE = {
   error: null,
 };
 
+/*
+ * Shows Reducer
+ * Stores information pertaining to the shows
+ */
 const showsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.FETCH_SHOWS_REQUEST:
