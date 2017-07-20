@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ShowCard = ({ date, image}) => (
+const ShowDetail = ({ date, image }) => (
   <li>
     <img src={image} />
     { date }
   </li>
 );
 
-ShowCard.propTypes = {
+ShowDetail.propTypes = {
   date: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 };
 
-export default ShowCard;
+export default ShowDetail;

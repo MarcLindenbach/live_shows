@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchShows } from '../actions';
-import { ShowCard } from '../components';
+import { ShowDetail } from '../components';
 
 class ShowsList extends Component {
   componentWillMount() {
@@ -12,7 +12,7 @@ class ShowsList extends Component {
   render() {
     return (
       <ul>
-        {this.props.shows.map(show => <ShowCard key={show.id} {...show} />)}
+        {this.props.shows.map(show => <ShowDetail key={show.id} {...show} />)}
       </ul>
     );
   }
