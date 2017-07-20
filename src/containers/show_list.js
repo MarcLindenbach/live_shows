@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
 import { fetchShows } from '../actions';
 import { ShowCard } from '../components';
@@ -11,9 +12,14 @@ class ShowList extends Component {
 
   render() {
     return (
-      <div className="shows-list row">
-        {this.props.shows.map(show => <ShowCard key={show.id} {...show} />)}
-      </div>
+        <ReactCSSTransitionGroup
+          transitionName="show-list"
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}
+          className="shows-list row"
+        >
+          {this.props.shows.map(show => <ShowCard key={show.id} {...show} />)}
+        </ReactCSSTransitionGroup>
     );
   }
 }
