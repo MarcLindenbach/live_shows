@@ -6,6 +6,14 @@ import SocialMediaButton from './social_media_button';
 /*
  * Show Card Component
  * Displays the details of a show
+ * This component is ripe for breaking up, I left it as is because although large there is minimal
+ * repetition. If I felt there were components that could be re-used I would split this component
+ * into 4:
+ *   - ShowCard
+ *     - ShowCardImage
+ *     - ShowCardTitle
+ *     - ShowCardDetails
+ *     - ShowCardSocialMediaButtons
  */
 const ShowCard = props => (
   <div className="col-md-6 col-lg-4">

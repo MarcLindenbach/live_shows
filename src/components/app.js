@@ -1,13 +1,16 @@
 import React from 'react';
-import { ShowList, LoadMore } from '../containers';
+import Navbar from './nav_bar';
+import Shows from './shows';
 
 /* Live Show App Component
- * Displays the navbar, list of shows and load more button
+ * Displays the navbar and shows components
+ * In a larger instead of the shows component I would probably use react-router to display
+ * the correct component based on the route
  */
 const App = () => (
-  <div className="app container">
-    <ShowList />
-    <LoadMore />
+  <div>
+    <Navbar />
+    <Shows />
   </div>
 );
 
