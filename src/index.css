@@ -1,8 +1,8 @@
-.show-list-enter {
+.show-list--enter {
     opacity: 0.01;
 }
 
-.show-list-enter.show-list-enter-active {
+.show-list--enter.show-list--enter-active {
     opacity: 1;
     transition: opacity 500ms ease-in;
 }

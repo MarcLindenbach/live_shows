@@ -12,14 +12,16 @@ class ShowList extends Component {
 
   render() {
     return (
-        <ReactCSSTransitionGroup
-          transitionName="show-list"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
-          className="shows-list row"
-        >
-          {this.props.shows.map(show => <ShowCard key={show.id} {...show} />)}
-        </ReactCSSTransitionGroup>
+      <ReactCSSTransitionGroup
+        transitionName={{
+          enter: 'show-list--enter',
+          enterActive: 'show-list--enter-active',
+        }}
+        transitionEnterTimeout={300}
+        className="shows-list row"
+      >
+        {this.props.shows.map(show => <ShowCard key={show.id} {...show} />)}
+      </ReactCSSTransitionGroup>
     );
   }
 }
