@@ -2,20 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchShows } from '../actions';
+import { ShowCard } from '../components';
 
 class ShowsList extends Component {
   componentWillMount() {
     this.props.fetchShows();
   }
 
-  renderShows() {
-    return this.props.shows.map(show => <li>{ show }</li>);
-  }
-
   render() {
     return (
       <ul>
-        {this.renderShows()}
+        {this.props.shows.map(show => <ShowCard key={show.id} {...show} />)}
       </ul>
     );
   }
