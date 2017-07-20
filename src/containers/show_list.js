@@ -5,9 +5,16 @@ import { connect } from 'react-redux';
 import { fetchShows } from '../actions';
 import { ShowCard } from '../components';
 
+/*
+ * Show List Component
+ * Displays each individual show card that exists in the store
+ * On mounting will fetch shows (if no shows have been fetched already)
+ */
 class ShowList extends Component {
   componentWillMount() {
-    this.props.fetchShows(this.props.nextPage);
+    if (this.props.shows.length === 0) {
+      this.props.fetchShows(this.props.nextPage);
+    }
   }
 
   render() {
@@ -18,6 +25,7 @@ class ShowList extends Component {
           enterActive: 'show-list--enter-active',
         }}
         transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}
         className="shows-list row"
       >
         {this.props.shows.map(show => <ShowCard key={show.id} {...show} />)}
