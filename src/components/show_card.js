@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ShowDetail from './show_detail';
+import SocialMediaButton from './social_media_button';
 
 /*
  * Show Card Component
@@ -25,11 +26,27 @@ const ShowCard = props => (
         <ShowDetail title="Role" value={props.role} />
         <ShowDetail title="Admission" value={props.admission} />
       </div>
+      <div className="show-card__social-media card-footer">
+        <span className="text-muted">Promote</span>
+        <SocialMediaButton
+          type="facebook"
+          onClick={() => console.log(`Facebook Clicked (show ${props.id})`)}
+        />
+        <SocialMediaButton
+          type="twitter"
+          onClick={() => console.log(`Twitter Clicked (show ${props.id})`)}
+        />
+        <SocialMediaButton
+          type="instagram"
+          onClick={() => console.log(`Instagram Clicked (show ${props.id})`)}
+        />
+      </div>
     </div>
   </div>
 );
 
 ShowCard.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,

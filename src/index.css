@@ -37,8 +37,39 @@
     font-size: .8rem;
 }
 
-.show-card__details__entry span {
+.show-card__details__entry span,
+.show-card__social-media span {
     display: inline-block;
     min-width: 30%;
 }
 
+.show-card__social-media {
+    background-color: inherit;
+    font-size: .8rem;
+}
+
+.social-media-button {
+    border-radius: 50%;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.social-media-button:hover {
+    cursor: pointer;
+}
+
+.social-media-button--facebook {
+    background-color: #3c60a4;
+}
+
+.social-media-button--twitter {
+    background-color: #5fa9ef;
+}
+
+.social-media-button--instagram {
+    background-color: #8d45a5;
+}
