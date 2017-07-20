@@ -1,6 +1,9 @@
 Live Shows
 ==========
 
+##Demo
+Check out the demo over at https://marclindenbach.github.io/live_shows/
+
 ## Running
 To run locally:
 - Install npm requirements: `npm install`
@@ -15,5 +18,5 @@ Tests have been written for the _shows reducer_ and the _social media button_ co
 ## Deploying
 To deploy:
 - Install npm requirements: `npm install`
-- Build the dist code: `npm build`
+- Build the dist code: `npm run build`
 - Navigate to `/dist`
