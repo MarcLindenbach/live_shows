@@ -2,6 +2,12 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import _ from 'lodash';
 
+/*
+ * Faux Server
+ * Intercepts axios requests and returns data with a 1.5 second delay. Returns shows for the first
+ * 4 pages of data, then on the 5th page returns an empty list
+ */
+
 const SHOWS_PER_REQUEST = 3;
 const PAGES = 4;
 
@@ -20,9 +26,9 @@ const getMockShow = (id, page) => ({
 /* Return a set number of shows with unique ids */
 const getMockShows = page => _.times(SHOWS_PER_REQUEST, t => getMockShow(t, page));
 
-/* Stub a url for each page with a delayed response to simulate latency */
 const mock = new MockAdapter(axios, { delayResponse: 1500 });
 
+/* Stub a url for each of the n page requests */
 _.times(PAGES, (page) => {
   mock.onGet(`http://fakeshowsapi.com/shows?page=${page + 1}`)
     .reply(200, getMockShows(page));
