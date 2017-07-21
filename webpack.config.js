@@ -19,17 +19,18 @@ const VENDOR_LIBS = [
 module.exports = {
   entry: {
     app: './src/index.js',
-    init: VENDOR_LIBS
+    init: VENDOR_LIBS,
   },
   output: {
     path: path.resolve('dist'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     rules: [
       { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.css$/, use:
-        ExtractTextPlugin.extract({
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader'],
         }),
