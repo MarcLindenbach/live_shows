@@ -1,6 +1,7 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import _ from 'lodash';
+import config from 'config';
 
 /*
  * Faux Server
@@ -30,10 +31,10 @@ const mock = new MockAdapter(axios, { delayResponse: 1500 });
 
 /* Stub a url for each of the n page requests */
 _.times(PAGES, (page) => {
-  mock.onGet(`http://fakeshowsapi.com/shows?page=${page + 1}`)
+  mock.onGet(`${config.serverUrl}/shows?page=${page + 1}`)
     .reply(200, getMockShows(page));
 });
 
 /* Stub a url for the last page which will return an empty array of shows (i.e. no shows left) */
-mock.onGet(`http://fakeshowsapi.com/shows?page=${PAGES + 1}`)
+mock.onGet(`${config.serverUrl}/shows?page=${PAGES + 1}`)
   .reply(200, []);

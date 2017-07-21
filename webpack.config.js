@@ -45,4 +45,11 @@ module.exports = {
   node: {
     fs: 'empty',
   },
+  externals: {
+    config: JSON.stringify(process.env.ENV === 'production' ? {
+      serverUrl: 'http://fake-shows-production.com',
+    } : {
+      serverUrl: 'http://fake-shows-local.com',
+    }),
+  },
 };

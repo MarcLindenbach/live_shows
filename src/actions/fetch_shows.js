@@ -1,4 +1,5 @@
 import axios from 'axios';
+import config from 'config';
 import * as types from './types';
 
 export const fetchShowsRequest = () => ({
@@ -22,7 +23,7 @@ export const fetchShowsSuccess = shows => ({
 export const fetchShows = pageNumber =>
   (dispatch) => {
     dispatch(fetchShowsRequest());
-    return axios.get(`http://fakeshowsapi.com/shows?page=${pageNumber}`)
+    return axios.get(`${config.serverUrl}/shows?page=${pageNumber}`)
       .then(({ data }) => dispatch(fetchShowsSuccess(data)))
       .catch(({ response, message }) => {
         const err = response ? response.data : message;
